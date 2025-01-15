@@ -69,6 +69,6 @@ if Order in Menu:
             print("Insufficient Credits. Please Insert More Money.")
             money -= payment
       except ValueError:
-        print("Insufficient Payment Amount, Please Enter A Valid Number.")    
+        print("Invalid Input, Please Enter Again.")    
 else:
    print("Invalid Selection, Vending Machine Shutting Down")
