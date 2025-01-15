@@ -22,12 +22,12 @@ print("""║      Item: Coffee|Price: 2.50 AED|Code: A1             ║
 ║      Item: Lipton Iced Tea|Price: 5.00 AED|Code: B2    ║
 ║      Item: Milk|Price: 2.50 AED|Code: B3               ║""")
 print("""════════════════════════【Snacks】════════════════════════""")
-print("""║      Item: Lays|Price: 2.00 Aed|Code: C1               ║
-║      Item: Doritos|Price: 3.00 Aed|Code: C2            ║
-║      Item: KitKat|Price: 2.50 Aed|Code: C3             ║
-║      Item: Sohar Chips|Price: 3.00 Aed|Code: D1        ║
-║      Item: Pringles|Price: 7.50 Aed|Code: D2           ║
-║      Item: Buggles|Price: 5.00 Aed|Code: D3            ║
+print("""║      Item: Lays|Price: 2.00 AED|Code: C1               ║
+║      Item: Doritos|Price: 3.00 AED|Code: C2            ║
+║      Item: KitKat|Price: 2.50 AED|Code: C3             ║
+║      Item: Sohar Chips|Price: 3.00 AED|Code: D1        ║
+║      Item: Pringles|Price: 7.50 AED|Code: D2           ║
+║      Item: Buggles|Price: 5.00 AED|Code: D3            ║
 ╚════════════════════════════════════════════════════════╝
 """)
                                             
