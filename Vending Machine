@@ -58,12 +58,12 @@ if Order in Menu:
     money = chosen_snack['Price']
     while money > 0:
       try: 
-         payment = float(input(f"Insert {money:.2f}$: "))
+         payment = float(input(f"Insert {money:.2f}AED: "))
          if payment >= money:
             print(f"Invalid Amount, Insert Money")
             change = payment - money
             print(f"You Have Purchased {chosen_snack['item']}!")
-            print(f"Thanks For Purchasing! Here's Your Change Of {change:.2f}$")
+            print(f"Thanks For Purchasing! Here's Your Change Of {change:.2f} AED")
             break
          else:
             print("Insufficient Credits. Please Insert More Money.")
