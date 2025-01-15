@@ -1,0 +1,74 @@
+#Vending Machine Text Art
+
+print("""
+██╗   ██╗███████╗███╗   ██╗██████╗ ██╗███╗   ██╗ ██████╗     ███╗   ███╗ █████╗  ██████╗██╗  ██╗██╗███╗   ██╗███████╗
+██║   ██║██╔════╝████╗  ██║██╔══██╗██║████╗  ██║██╔════╝     ████╗ ████║██╔══██╗██╔════╝██║  ██║██║████╗  ██║██╔════╝
+██║   ██║█████╗  ██╔██╗ ██║██║  ██║██║██╔██╗ ██║██║  ███╗    ██╔████╔██║███████║██║     ███████║██║██╔██╗ ██║█████╗  
+╚██╗ ██╔╝██╔══╝  ██║╚██╗██║██║  ██║██║██║╚██╗██║██║   ██║    ██║╚██╔╝██║██╔══██║██║     ██╔══██║██║██║╚██╗██║██╔══╝  
+ ╚████╔╝ ███████╗██║ ╚████║██████╔╝██║██║ ╚████║╚██████╔╝    ██║ ╚═╝ ██║██║  ██║╚██████╗██║  ██║██║██║ ╚████║███████╗
+  ╚═══╝  ╚══════╝╚═╝  ╚═══╝╚═════╝ ╚═╝╚═╝  ╚═══╝ ╚═════╝     ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝
+      """)
+
+#Menu Of The Vending Machine
+
+print("""                  ╔═══════════════════╗
+                  ║     〚MENU〛      ║
+                  ╚═══════════════════╝""")
+print("""╔═══════════════════════【Drinks】═══════════════════════╗""")
+print("""║      Item: Coffee|Price: 2.50 AED|Code: A1             ║ 
+║      Item: Water|Price: 1.00 AED|Code: A2              ║
+║      Item: Juice|Price: 3.50 AED|Code: A3              ║
+║      Item: Coca-Cola|Price: 2.50 AED|Code: B1          ║
+║      Item: Lipton Iced Tea|Price: 5.00 AED|Code: B2    ║
+║      Item: Milk|Price: 2.50 AED|Code: B3               ║""")
+print("""════════════════════════【Snacks】════════════════════════""")
+print("""║      Item: Lays|Price: 2.00 Aed|Code: C1               ║
+║      Item: Doritos|Price: 3.00 Aed|Code: C2            ║
+║      Item: KitKat|Price: 2.50 Aed|Code: C3             ║
+║      Item: Sohar Chips|Price: 3.00 Aed|Code: D1        ║
+║      Item: Pringles|Price: 7.50 Aed|Code: D2           ║
+║      Item: Buggles|Price: 5.00 Aed|Code: D3            ║
+╚════════════════════════════════════════════════════════╝
+""")
+                                            
+#Dictionary For The Menu
+
+Menu = {
+  'A1' : {"item" : "Coffee","Price" : 2.50},
+  'A2' : {"item" : "Water","Price" : 1.00},
+  'A3' : {"item" : "Juice","Price" : 3.50},
+  'B1' : {"item" : "Coca-Cola","Price" : 2.50},
+  'B2' : {"item" : "Lipton Iced TEA","Price" : 5.00},
+  'B3' : {"item" : "Milk","Price" : 2.50},
+  'C1' : {"item" : "Lays","Price" : 2.00},
+  'C2' : {"item" : "Doritos","Price" : 3.00},
+  'C3' : {"item" : "KitKat","Price" : 2.50},
+  'D1' : {"item" : "Sohar Chips","Price" : 3.00},
+  'D2' : {"item" : "Pringles","Price" : 7.50},
+  'D3' : {"item" : "Buggles","Price" : 5.00}
+}
+
+#User Input And Code For Money
+
+Order = input("Enter Code Of Desired Item: ")
+
+if Order in Menu:
+    chosen_snack = Menu[Order]
+    print(f"You Have Selected {chosen_snack['item']}.")
+    money = chosen_snack['Price']
+    while money > 0:
+      try: 
+         payment = float(input(f"Insert {money:.2f}$: "))
+         if payment >= money:
+            print(f"Invalid Amount, Insert Money")
+            change = payment - money
+            print(f"You Have Purchased {chosen_snack['item']}!")
+            print(f"Thanks For Purchasing! Here's Your Change Of {change:.2f}$")
+            break
+         else:
+            print("Insufficient Credits. Please Insert More Money.")
+            money -= payment
+      except ValueError:
+        print("Insufficient Payment Amount, Please Enter A Valid Number.")    
+else:
+   print("Invalid Selection, Vending Machine Shutting Down")
